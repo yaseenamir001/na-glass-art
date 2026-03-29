@@ -236,7 +236,7 @@ export const services = [
     slug: "custom-glass-work",
     icon: Wrench,
     desc: "Tailor-made glass solutions.",
-    image: "/images/services/custom-glass.jpeg",
+    image: "/images/services/custom-glass/custom-glass.jpeg",
 
     details:
       "Fully customized glass solutions designed according to your specific needs.",

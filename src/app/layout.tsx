@@ -1,5 +1,6 @@
 import Navbar from "@/components/common/Navbar";
 import "../styles/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function RootLayout({
   children,
@@ -12,6 +13,7 @@ export default function RootLayout({
         {" "}
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
