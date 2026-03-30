@@ -122,7 +122,7 @@ export default async function ServiceDetail({
 
           <Link
             href="/contact"
-            className="px-4 py-3 text-sm font-semibold text-white bg-linear-to-r from-sky-500 to-sky-600 rounded-lg shadow-md transition-opacity duration-300 hover:opacity-90 ease-in-out"
+            className="px-4 py-3 text-sm font-semibold text-white bg-linear-to-r from-sky-500 to-sky-600 rounded-lg shadow-md transition-colors duration-300 ease-in-out hover:from-sky-600 hover:to-sky-700 hover:opacity-95"
           >
             Get Free Consultation
           </Link>

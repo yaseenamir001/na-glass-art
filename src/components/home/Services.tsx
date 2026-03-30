@@ -36,16 +36,16 @@ const Services = () => {
             return (
               <div
                 key={service.slug}
-                className="group relative h-80 rounded-2xl overflow-hidden border border-white/10 hover:scale-[1.03] transition"
+                className="group relative h-80 rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 ease-out hover:scale-[1.04]"
               >
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-800 ease-out group-hover:scale-110"
+                  className="object-cover transition-transform duration-800 ease-out group-hover:scale-110 z-0"
                 />
 
-                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60" />
+                <div className="absolute inset-0 md:bg-black/60 bg-black/60 transition-all duration-500 group-hover:bg-black/50" />
 
                 <div className="relative z-10 h-full flex flex-col justify-end p-6">
                   <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-sky-500/20 mb-4">
@@ -60,7 +60,7 @@ const Services = () => {
 
                   <Link
                     href={`/services/${service.slug}`}
-                    className="mt-4 text-sm text-sky-400 opacity-0 group-hover:opacity-100 transition"
+                    className="mt-4 text-sm text-sky-400 opacity-100 sm:opacity-80 transition-opacity duration-300 ease-out hover:opacity-100"
                   >
                     Learn More →
                   </Link>

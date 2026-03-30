@@ -49,7 +49,7 @@ const Navbar = () => {
         scrolled ? "shadow-lg" : "shadow-sm"
       } ${navBg} ${!isDark && "border-b border-slate-200"}`}
     >
-      <nav className="mx-auto max-w-7xl px-8 py-3 lg:py-4 h-full flex items-center justify-between">
+      <nav className="mx-auto max-w-7xl px-6 py-3 lg:py-4 h-full flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
@@ -76,8 +76,8 @@ const Navbar = () => {
                         ? "text-sky-400"
                         : "text-sky-600"
                       : isDark
-                        ? "text-slate-300 hover:text-sky-400"
-                        : "text-slate-700 hover:text-sky-600"
+                        ? "text-slate-300 hover:text-sky-400/90"
+                        : "text-slate-700 hover:text-sky-600/90"
                   }`}
                 >
                   {link.label}
@@ -98,26 +98,28 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-6">
           <button
             onClick={() => setIsDark(!isDark)}
-            className={`p-2.5 rounded-full transition-all cursor-pointer duration-300 ${
+            className={`p-2.5 rounded-full transition-all cursor-pointer duration-300 ease-in-out transform hover:rotate-12${
               isDark
                 ? "text-white hover:bg-white/10 hover:text-sky-400"
                 : "text-slate-700 hover:bg-slate-200/70 hover:text-sky-600"
             }`}
             aria-label="Toggle dark mode"
           >
-            {isDark ? <Sun size={24} /> : <Moon size={24} />}
+            <span className="transition-transform duration-500 ease-in-out transform hover:rotate-12">
+              {isDark ? <Sun size={24} /> : <Moon size={24} />}
+            </span>
           </button>
 
           <Link
             href="/contact"
-            className="px-4 py-3 text-sm font-semibold text-white bg-linear-to-r from-sky-500 to-sky-600 rounded-lg shadow-md transition-opacity duration-300 hover:opacity-90 ease-in-out"
+            className="px-4 py-3 text-sm font-semibold text-white bg-linear-to-r from-sky-500 to-sky-600 rounded-lg shadow-md transition-colors duration-300 ease-in-out hover:from-sky-600 hover:to-sky-700 hover:opacity-95"
           >
             Get Free Consultation
           </Link>
         </div>
 
         {/* Mobile Actions */}
-        <div className="lg:hidden flex items-center gap-4">
+        <div className="lg:hidden flex items-center gap-2 sm:gap-0">
           <button
             onClick={() => setIsDark(!isDark)}
             className={`p-2 rounded-full transition-all cursor-pointer ${
@@ -162,7 +164,7 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-5 py-4 rounded-xl text-base font-medium transition-all duration-300 ${
+                  className={`block px-5 py-2 rounded-xl text-base font-medium transition-all duration-300 ${
                     active
                       ? isDark
                         ? "bg-sky-500/20 text-sky-400"
@@ -180,7 +182,7 @@ const Navbar = () => {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block mt-6 px-4 py-3 text-center text-white font-semibold bg-linear-to-r from-sky-500 to-sky-600 rounded-xl shadow-md transition-all duration-300 hover:opacity-90"
+              className="block mt-6 px-4 py-3 text-sm text-center font-semibold text-white bg-linear-to-r from-sky-500 to-sky-600 rounded-lg shadow-md transition-colors duration-300 ease-in-out hover:from-sky-600 hover:to-sky-700 hover:opacity-95"
             >
               Get Free Consultation
             </Link>

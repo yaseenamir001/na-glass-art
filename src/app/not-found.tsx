@@ -15,7 +15,7 @@ export default function Custom404() {
 
         {/* Small text */}
         <p className="text-slate-500 text-sm mb-8">
-          Thank you for your patience ❤️
+          Thank you for your patience
         </p>
 
         {/* Button */}

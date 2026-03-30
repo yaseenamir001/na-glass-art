@@ -90,14 +90,14 @@ const Hero = () => {
           <div className="mt-10 mb-15 flex flex-col md:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="px-8 py-3 bg-linear-to-r from-sky-500 to-sky-600 text-white rounded-xl shadow-md transition-opacity duration-300 hover:opacity-90 ease-in-out"
+              className="px-8 py-3 font-semibold text-white bg-linear-to-r from-sky-500 to-sky-600 rounded-xl shadow-md transition-colors duration-300 ease-in-out hover:from-sky-600 hover:to-sky-700 hover:opacity-95"
             >
               Get Free Consultation
             </Link>
 
             <Link
               href="/projects"
-              className="px-8 py-3 border border-sky-400 text-sky-300 rounded-xl font-semibold hover:bg-sky-500 hover:text-white transition"
+              className="px-8 py-3 border border-sky-500 text-sky-500 rounded-xl font-semibold transition-colors duration-300 ease-in-out hover:bg-sky-600 hover:text-white hover:border-sky-600"
             >
               View Projects
             </Link>
