@@ -7,15 +7,44 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  const isDark = theme === "dark";
+
+  // Scroll shadow
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Load saved theme
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
+
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setTheme("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      setTheme("light");
+    }
+  }, []);
+
+  // Toggle Theme
+  const toggleTheme = () => {
+    if (theme === "dark") {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setTheme("dark");
+    }
+  };
 
   // Lock scroll when menu open
   // useEffect(() => {
@@ -38,7 +67,6 @@ const Navbar = () => {
     { href: "/contact", label: "Contact" },
   ];
 
-  const solidBgDark = "bg-black/95 backdrop-blur-md text-white";
   const navBg = isDark
     ? "bg-black/95 backdrop-blur-md text-white"
     : "bg-white/95 backdrop-blur-md text-slate-900";
@@ -97,8 +125,8 @@ const Navbar = () => {
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-6">
           <button
-            onClick={() => setIsDark(!isDark)}
-            className={`p-2.5 rounded-full transition-all cursor-pointer duration-300 ease-in-out transform hover:rotate-12${
+            onClick={toggleTheme}
+            className={`p-2.5 rounded-full transition-all cursor-pointer duration-300 ease-in-out transform hover:rotate-12 ${
               isDark
                 ? "text-white hover:bg-white/10 hover:text-sky-400"
                 : "text-slate-700 hover:bg-slate-200/70 hover:text-sky-600"
@@ -121,7 +149,7 @@ const Navbar = () => {
         {/* Mobile Actions */}
         <div className="lg:hidden flex items-center gap-2 sm:gap-0">
           <button
-            onClick={() => setIsDark(!isDark)}
+            onClick={toggleTheme}
             className={`p-2 rounded-full transition-all cursor-pointer ${
               isDark
                 ? "text-white hover:bg-white/10 hover:text-sky-400"
@@ -153,7 +181,9 @@ const Navbar = () => {
         }`}
       >
         <div
-          className={`border-t ${navBg} ${isDark ? "border-white/5" : "border-slate-200"} rounded-b-2xl`}
+          className={`border-t ${navBg} ${
+            isDark ? "border-white/5" : "border-slate-200"
+          } rounded-b-2xl`}
         >
           <div className="px-5 py-8 space-y-2 max-w-7xl mx-auto">
             {navLinks.map((link) => {

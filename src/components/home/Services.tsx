@@ -6,23 +6,25 @@ import { services } from "@/data/services";
 
 const Services = () => {
   return (
-    <section className="relative w-full py-20 bg-black overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-black via-black/95 to-black" />
+    <section className="relative w-full py-20 bg-white dark:bg-black overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-linear-to-b from-white via-white/95 to-white dark:from-black dark:via-black/95 dark:to-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
-          <p className="text-lg uppercase tracking-[0.35em] text-sky-400 mb-4">
+          <p className="text-sm md:text-lg uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400 mb-4">
             Our Services
           </p>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-900 dark:text-white">
             Premium Glass & Aluminium
-            <span className="block mt-2 text-sky-400">
+            <span className="block mt-2 text-sky-600 dark:text-sky-400">
               Solutions for Every Space
             </span>
           </h2>
-          <p className="mt-5 text-slate-400 text-base md:text-lg">
+
+          <p className="mt-5 text-slate-700 dark:text-slate-400 text-base md:text-lg">
             We provide high-end glass and aluminium services tailored for
             residential and commercial environments with precision and quality.
           </p>
@@ -36,7 +38,7 @@ const Services = () => {
             return (
               <div
                 key={service.slug}
-                className="group relative h-80 rounded-2xl overflow-hidden border border-white/10 transition-all duration-500 ease-out hover:scale-[1.04]"
+                className="group relative h-80 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-md transition-all duration-500 ease-out hover:scale-[1.04]"
               >
                 <Image
                   src={service.image}
@@ -45,22 +47,25 @@ const Services = () => {
                   className="object-cover transition-transform duration-800 ease-out group-hover:scale-110 z-0"
                 />
 
-                <div className="absolute inset-0 md:bg-black/60 bg-black/60 transition-all duration-500 group-hover:bg-black/50" />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-white/40 via-white/10 to-transparent dark:bg-none md:dark:bg-black/60 dark:bg-black/60 transition-all duration-500 ease-in-out group-hover:dark:bg-black/50" />
 
                 <div className="relative z-10 h-full flex flex-col justify-end p-6">
-                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-sky-500/20 mb-4">
-                    <Icon className="w-6 h-6 text-sky-400" />
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/60 dark:bg-sky-500/20 mb-4">
+                    <Icon className="w-6 h-6 text-sky-600 dark:text-sky-400" />
                   </div>
 
-                  <h3 className="text-xl font-semibold text-white">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-slate-300">{service.desc}</p>
+                  <p className="text-sm text-slate-700 dark:text-slate-300 truncate w-full">
+                    {service.desc}
+                  </p>
 
                   <Link
                     href={`/services/${service.slug}`}
-                    className="mt-4 text-sm text-sky-400 opacity-100 sm:opacity-80 transition-opacity duration-300 ease-out hover:opacity-100"
+                    className="mt-4 text-sm text-sky-600 dark:text-sky-400 opacity-100 sm:opacity-90 md:text-md md:font-bold transition-opacity duration-300 ease-out hover:opacity-100"
                   >
                     Learn More →
                   </Link>

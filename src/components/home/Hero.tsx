@@ -23,7 +23,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-center lg:justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex flex-col justify-center lg:justify-center overflow-hidden bg-white dark:bg-black">
       {/* Background */}
       {images.map((img, index) => (
         <div
@@ -35,51 +35,55 @@ const Hero = () => {
         />
       ))}
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-linear-to-b from-white/60 via-white/40 to-white/10 dark:from-black/80 dark:via-black/50 dark:to-black/80" />
       {/* Content */}
       <div className="relative z-10 w-full px-6 text-center mt-12 pt-24 pb-32 lg:py-0">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs md:text-sm uppercase tracking-[0.35em] text-sky-400 mb-5">
+          <p className="text-xs md:text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400 mb-5">
             Architectural Glass & Aluminium Specialists
           </p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold text-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-semibold text-slate-900 dark:text-white leading-tight drop-shadow-sm">
             Where Glass Meets
-            <span className="block mt-3 text-sky-400">
+            <span className="block mt-3 text-sky-600 dark:text-sky-400">
               Precision Engineering
             </span>
           </h1>
 
-          <p className="mt-6 text-base md:text-xl text-slate-300 max-w-2xl mx-auto">
+          <p className="mt-6 text-base md:text-xl text-slate-700 dark:text-slate-300 max-w-2xl mx-auto">
             We design and install premium glass and aluminium systems for
             residential and commercial spaces.
           </p>
 
           {/* Stats */}
-          <div className="mt-10 md:mt-14 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-10">
+          <div className="mt-10 md:mt-14 bg-white/30 dark:bg-white/5 backdrop-blur-sm border border-white/50 dark:border-white/10 rounded-3xl p-6 md:p-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
               <div className="flex flex-col items-center space-y-3">
-                <Building2 className="w-8 h-8 text-sky-400" />
-                <p className="text-3xl md:text-4xl font-bold text-white">
+                <Building2 className="w-8 h-8 text-sky-600 dark:text-sky-400" />
+                <p className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
                   500+
                 </p>
-                <p className="text-xs text-slate-400 uppercase">
+                <p className="text-xs md:text-sm text-slate-500 dark:text-slate-400 uppercase">
                   Projects Completed
                 </p>
               </div>
 
               <div className="flex flex-col items-center space-y-3">
-                <BadgeCheck className="w-8 h-8 text-sky-400" />
-                <p className="text-3xl md:text-4xl font-bold text-white">25+</p>
-                <p className="text-xs text-slate-400 uppercase">
+                <BadgeCheck className="w-8 h-8 text-sky-600 dark:text-sky-400" />
+                <p className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
+                  25+
+                </p>
+                <p className="text-xs md:text-sm text-slate-500 dark:text-slate-400 uppercase">
                   Years Experience
                 </p>
               </div>
 
               <div className="flex flex-col items-center space-y-3">
-                <Smile className="w-8 h-8 text-sky-400" />
-                <p className="text-3xl md:text-4xl font-bold text-white">98%</p>
-                <p className="text-xs text-slate-400 uppercase">
+                <Smile className="w-8 h-8 text-sky-600 dark:text-sky-400" />
+                <p className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
+                  98%
+                </p>
+                <p className="text-xs md:text-sm text-slate-500 dark:text-slate-400 uppercase">
                   Client Satisfaction
                 </p>
               </div>
@@ -97,7 +101,7 @@ const Hero = () => {
 
             <Link
               href="/projects"
-              className="px-8 py-3 border border-sky-500 text-sky-500 rounded-xl font-semibold transition-colors duration-300 ease-in-out hover:bg-sky-600 hover:text-white hover:border-sky-600"
+              className="px-8 py-3 border border-sky-600 text-sky-600 dark:text-sky-400 rounded-xl font-semibold transition-colors duration-300 ease-in-out hover:bg-sky-600 hover:text-white hover:border-sky-600"
             >
               View Projects
             </Link>
@@ -108,9 +112,9 @@ const Hero = () => {
       <div className="absolute bottom-10 md:bottom-14 left-0 w-full px-4 md:px-8 py-2 flex flex-col gap-8 z-10">
         {/* Scroll Indicator (Center) */}
         <div className="flex justify-center">
-          <div className="animate-bounce flex flex-col items-center">
-            <div className="w-3 h-3 border-b-2 border-r-2 border-white rotate-45 mb-1"></div>
-            <div className="w-3 h-3 border-b-2 border-r-2 border-white rotate-45"></div>
+          <div className="flex flex-col items-center animate-[arrowMove_2s_ease-in-out_infinite]">
+            <div className="w-3 h-3 border-b-2 border-r-2 border-slate-600 dark:border-white rotate-45 mb-1"></div>
+            <div className="w-3 h-3 border-b-2 border-r-2 border-slate-600 dark:border-white rotate-45"></div>
           </div>
         </div>
 
@@ -121,7 +125,9 @@ const Hero = () => {
               key={index}
               onClick={() => setCurrent(index)}
               className={`h-1.5 rounded-full transition-all ${
-                index === current ? "w-10 bg-sky-400" : "w-3 bg-white/40"
+                index === current
+                  ? "w-10 bg-sky-600 dark:bg-sky-400"
+                  : "w-3 bg-slate-200 dark:bg-white/40"
               }`}
             />
           ))}
