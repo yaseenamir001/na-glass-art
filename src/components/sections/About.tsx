@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <section className="w-full py-20 bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-300">
+    <section className="w-full py-8 bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-300">
       {/* HERO */}
       <div className="relative h-[60vh] w-full overflow-hidden">
         <Image
@@ -23,7 +23,7 @@ const About = () => {
               About Us
             </p>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Crafting Glass with
               <span className="block text-sky-600 dark:text-sky-400 mt-2">
                 Precision & Passion
@@ -34,9 +34,9 @@ const About = () => {
       </div>
 
       {/* STORY */}
-      <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16 items-center">
         {/* IMAGE */}
-        <div className="relative h-105 md:h-130 rounded-3xl overflow-hidden group">
+        <div className="relative h-90 md:h-130 rounded-2xl overflow-hidden group">
           <Image
             src="/images/about/Door.avif"
             alt="Our Story"
@@ -52,7 +52,7 @@ const About = () => {
             Our Journey
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6">
             Our Story
           </h2>
 
@@ -98,7 +98,7 @@ const About = () => {
       </div>
 
       {/* WHY CHOOSE US */}
-      <div className="max-w-7xl mx-auto px-6 pb-24">
+      <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-semibold text-center mb-14">
           Why Choose Us
         </h2>
@@ -134,25 +134,6 @@ const About = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* FINAL CTA */}
-      <div className="text-center pb-24 px-6">
-        <h3 className="text-3xl font-semibold mb-4">
-          Let’s Build Something Amazing
-        </h3>
-
-        <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto">
-          Contact us today and get a free consultation for your glass and
-          aluminium project.
-        </p>
-
-        <Link
-          href="/contact"
-          className="px-8 py-4 font-semibold text-white bg-linear-to-r from-sky-500 to-sky-600 rounded-xl shadow-md transition-colors duration-300 ease-in-out hover:from-sky-600 hover:to-sky-700 hover:opacity-95"
-        >
-          Get Free Consultation
-        </Link>
       </div>
     </section>
   );

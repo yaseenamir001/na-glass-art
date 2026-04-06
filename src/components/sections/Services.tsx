@@ -6,13 +6,13 @@ import { services } from "@/data/services";
 
 const Services = () => {
   return (
-    <section className="relative w-full py-20 bg-white dark:bg-black overflow-hidden">
+    <section className="relative w-full pt-36 pb-28 bg-white dark:bg-black overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-linear-to-b from-white via-white/95 to-white dark:from-black dark:via-black/95 dark:to-black" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
         {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center pb-12 max-w-3xl mx-auto">
           <p className="text-sm md:text-lg uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400 mb-4">
             Our Services
           </p>

@@ -37,7 +37,7 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-b from-white/60 via-white/40 to-white/10 dark:from-black/80 dark:via-black/50 dark:to-black/80" />
       {/* Content */}
-      <div className="relative z-10 w-full px-6 text-center mt-12 pt-24 pb-32 lg:py-0">
+      <div className="relative z-10 w-full px-6 text-center pt-24 pb-32 lg:py-0">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs md:text-sm uppercase tracking-[0.35em] text-sky-600 dark:text-sky-400 mb-5">
             Architectural Glass & Aluminium Specialists
@@ -100,10 +100,10 @@ const Hero = () => {
             </Link>
 
             <Link
-              href="/projects"
+              href="/services"
               className="px-8 py-3 border border-sky-600 text-sky-600 dark:text-sky-400 rounded-xl font-semibold transition-colors duration-300 ease-in-out hover:bg-sky-600 hover:text-white hover:border-sky-600"
             >
-              View Projects
+              View Services
             </Link>
           </div>
         </div>
